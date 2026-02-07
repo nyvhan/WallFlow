@@ -293,7 +293,7 @@
 <body>
   <header class="nav" role="banner">
     <div class="wrap navRow">
-      <a class="brand" href="index.html">
+      <a class="brand" href="./">
         <span class="logoWrap"><img class="logo" src="icons/wallflow---logo.ico" alt="WallFlow" /></span>
         <div style="display:flex; flex-direction:column; line-height:1.05;">
           <b>WallFlow</b>
@@ -312,24 +312,24 @@
             <button type="button" class="langPickerItem" role="menuitem" data-lang="es">Español</button>
           </div>
         </div>
-        <a class="chip" href="index.html" data-i18n="nav_home">Accueil</a>
-        <a class="chip" href="collection.html" data-i18n="nav_collection">Toute la collection</a>
-        <a class="chip" href="aide.html" data-i18n="nav_help">Aide</a>
-        <a class="chip" href="contact.html" data-i18n="nav_contact">Contact</a>
-        <a class="chip" href="submit.html" data-i18n="nav_submit">Soumettre</a>
-        <a class="chip" href="creator.html" data-i18n="nav_about">À propos</a>
+        <a class="chip" href="./" data-i18n="nav_home">Accueil</a>
+        <a class="chip" href="collection/" data-i18n="nav_collection">Toute la collection</a>
+        <a class="chip" href="aide/" data-i18n="nav_help">Aide</a>
+        <a class="chip" href="contact/" data-i18n="nav_contact">Contact</a>
+        <a class="chip" href="submit/" data-i18n="nav_submit">Soumettre</a>
+        <a class="chip" href="creator/" data-i18n="nav_about">À propos</a>
       </nav>
       <button type="button" class="burgerBtn" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navDrawer"><span></span></button>
     </div>
   </header>
   <div class="navOverlay" id="navOverlay" aria-hidden="true">
     <div class="navDrawer" id="navDrawer" role="dialog" aria-label="Menu de navigation">
-      <a class="chip" href="index.html" data-i18n="nav_home">Accueil</a>
-      <a class="chip" href="collection.html" data-i18n="nav_collection">Toute la collection</a>
-      <a class="chip" href="aide.html" data-i18n="nav_help">Aide</a>
-      <a class="chip" href="contact.html" data-i18n="nav_contact">Contact</a>
-      <a class="chip" href="submit.html" data-i18n="nav_submit">Soumettre</a>
-      <a class="chip" href="creator.html" data-i18n="nav_about">À propos</a>
+      <a class="chip" href="./" data-i18n="nav_home">Accueil</a>
+      <a class="chip" href="collection/" data-i18n="nav_collection">Toute la collection</a>
+      <a class="chip" href="aide/" data-i18n="nav_help">Aide</a>
+      <a class="chip" href="contact/" data-i18n="nav_contact">Contact</a>
+      <a class="chip" href="submit/" data-i18n="nav_submit">Soumettre</a>
+      <a class="chip" href="creator/" data-i18n="nav_about">À propos</a>
     </div>
   </div>
 
@@ -343,8 +343,8 @@
             <h1 data-i18n="index_hero_title">Des fonds d’écran .mp4 pour PC</h1>
             <p class="sub" data-i18n="index_hero_sub">Performance : les vidéos de la grille ne se chargent et ne se lancent que lorsque tu survoles une carte.</p>
             <div class="heroActions">
-              <a class="btn" href="wallpaper.html?src=wallpapers%2Fjinx-neon-arcane.mp4&amp;title=jinx-neon-arcane&amp;file=jinx-neon-arcane.mp4" data-i18n="index_hero_see">Voir Jinx</a>
-              <a class="btn secondary" href="collection.html" data-i18n="index_hero_collection">Toute la collection</a>
+              <a class="btn" href="wallpaper/?src=wallpapers%2Fjinx-neon-arcane.mp4&amp;title=jinx-neon-arcane&amp;file=jinx-neon-arcane.mp4" data-i18n="index_hero_see">Voir Jinx</a>
+              <a class="btn secondary" href="collection/" data-i18n="index_hero_collection">Toute la collection</a>
             </div>
           </div>
         </div>
@@ -408,12 +408,12 @@
       </div>
 
       <div class="ctaWide" aria-label="Explorer toute la collection">
-        <a href="collection.html" data-i18n="index_cta">Explorer toute la collection</a>
+        <a href="collection/" data-i18n="index_cta">Explorer toute la collection</a>
       </div>
     </section>
 
     <footer>
-      <p class="footerLine" data-i18n="footer_line" data-i18n-html="true">© 2026 WallFlow • Premium Wallpapers • Pour toute demande de retrait : <a href="contact.html">Contact</a></p>
+      <p class="footerLine" data-i18n="footer_line" data-i18n-html="true">© 2026 WallFlow • Premium Wallpapers • Pour toute demande de retrait : <a href="contact/">Contact</a></p>
     </footer>  </main>
 
   <div id="langWarningOverlay" role="dialog" aria-modal="true" aria-labelledby="langWarningMessage">
@@ -430,7 +430,7 @@
       if (src) params.set("src", src);
       if (title) params.set("title", title);
       if (file) params.set("file", file);
-      return `wallpaper.html?${params.toString()}`;
+      return `wallpaper/?${params.toString()}`;
     }
 
     async function ensureVideoLoaded(video){

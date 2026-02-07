@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WallFlow — Toute la collection</title>
   <meta name="color-scheme" content="dark light" />
-  <link rel="icon" type="image/x-icon" href="icons/wallflow---logo.ico" />
+  <link rel="icon" type="image/x-icon" href="../icons/wallflow---logo.ico" />
   <meta name="description" content="La référence des fonds d'écran animés en 4K pour PC. Téléchargement gratuit et soumission de créations." />
   <meta property="og:title" content="WallFlow — Premium .mp4 Wallpapers" />
   <meta property="og:description" content="La référence des fonds d'écran animés en 4K pour PC. Téléchargement gratuit et soumission de créations." />
-  <meta property="og:image" content="preview.png" />
+  <meta property="og:image" content="../preview.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="WallFlow — Premium .mp4 Wallpapers" />
   <meta name="twitter:description" content="La référence des fonds d'écran animés en 4K pour PC. Téléchargement gratuit et soumission de créations." />
-  <meta name="twitter:image" content="preview.png" />
+  <meta name="twitter:image" content="../preview.png" />
   <style>
     :root{
       --bg: #0b0d12;
@@ -370,8 +370,8 @@
 <body>
   <header class="nav" role="banner">
     <div class="wrap navRow">
-      <a class="brand" href="index.html">
-        <span class="logoWrap"><img class="logo" src="icons/wallflow---logo.ico" alt="WallFlow" /></span>
+      <a class="brand" href="../">
+        <span class="logoWrap"><img class="logo" src="../icons/wallflow---logo.ico" alt="WallFlow" /></span>
         <div style="display:flex; flex-direction:column; line-height:1.05;">
           <b>WallFlow</b>
           <span data-i18n="nav_brand_collection">Toute la collection</span>
@@ -400,31 +400,31 @@
             <button type="button" class="langPickerItem" role="menuitem" data-lang="es">Español</button>
           </div>
         </div>
-        <a class="chip" href="index.html" data-i18n="nav_home">Accueil</a>
-        <a class="chip" href="collection.html" data-i18n="nav_collection">Toute la collection</a>
-        <a class="chip" href="aide.html" data-i18n="nav_help">Aide</a>
-        <a class="chip" href="contact.html" data-i18n="nav_contact">Contact</a>
-        <a class="chip" href="submit.html" data-i18n="nav_submit">Soumettre</a>
-        <a class="chip" href="creator.html" data-i18n="nav_about">À propos</a>
+        <a class="chip" href="../" data-i18n="nav_home">Accueil</a>
+        <a class="chip" href="./" data-i18n="nav_collection">Toute la collection</a>
+        <a class="chip" href="../aide/" data-i18n="nav_help">Aide</a>
+        <a class="chip" href="../contact/" data-i18n="nav_contact">Contact</a>
+        <a class="chip" href="../submit/" data-i18n="nav_submit">Soumettre</a>
+        <a class="chip" href="../creator/" data-i18n="nav_about">À propos</a>
       </nav>
       <button type="button" class="burgerBtn" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navDrawer"><span></span></button>
     </div>
   </header>
   <div class="navOverlay" id="navOverlay" aria-hidden="true">
     <div class="navDrawer" id="navDrawer" role="dialog" aria-label="Menu de navigation">
-      <a class="chip" href="index.html" data-i18n="nav_home">Accueil</a>
-      <a class="chip" href="collection.html" data-i18n="nav_collection">Toute la collection</a>
-      <a class="chip" href="aide.html" data-i18n="nav_help">Aide</a>
-      <a class="chip" href="contact.html" data-i18n="nav_contact">Contact</a>
-      <a class="chip" href="submit.html" data-i18n="nav_submit">Soumettre</a>
-      <a class="chip" href="creator.html" data-i18n="nav_about">À propos</a>
+      <a class="chip" href="../" data-i18n="nav_home">Accueil</a>
+      <a class="chip" href="./" data-i18n="nav_collection">Toute la collection</a>
+      <a class="chip" href="../aide/" data-i18n="nav_help">Aide</a>
+      <a class="chip" href="../contact/" data-i18n="nav_contact">Contact</a>
+      <a class="chip" href="../submit/" data-i18n="nav_submit">Soumettre</a>
+      <a class="chip" href="../creator/" data-i18n="nav_about">À propos</a>
     </div>
   </div>
 
   <main class="wrap topPad">
     <section class="hero" aria-label="Hero">
       <div class="heroCard">
-        <video class="heroVideo" autoplay loop muted playsinline preload="metadata" src="wallpapers/jinx-neon-arcane.mp4"></video>
+        <video class="heroVideo" autoplay loop muted playsinline preload="metadata" src="../wallpapers/jinx-neon-arcane.mp4"></video>
         <div class="heroInner">
           <div class="heroGlass">
             <div class="kicker"><span class="dot"></span> <span data-i18n="collection_hero_kicker">Toute la collection</span></div>
@@ -446,7 +446,7 @@
       <div class="grid" id="grid"></div>
 
       <footer>
-        <p class="footerLine" data-i18n="footer_line" data-i18n-html="true">© 2026 WallFlow • Premium Wallpapers • Pour toute demande de retrait : <a href="contact.html">Contact</a></p>
+        <p class="footerLine" data-i18n="footer_line" data-i18n-html="true">© 2026 WallFlow • Premium Wallpapers • Pour toute demande de retrait : <a href="../contact/">Contact</a></p>
       </footer>
     </section>
   </main>
@@ -525,7 +525,7 @@
       "yandere-blue-archive.mp4"
     ];
 
-    const folder = "wallpapers/";
+    const folder = "../wallpapers/";
 
     // Tags thématiques (FR) : recherche par "jeux", "manga", "espace", "chill", etc.
     // Tu peux en ajouter facilement (même si tu ajoutes des fichiers plus tard).
@@ -596,7 +596,7 @@
       if (src) params.set("src", src);
       if (title) params.set("title", title);
       if (file) params.set("file", file);
-      return `wallpaper.html?${params.toString()}`;
+      return `../wallpaper/?${params.toString()}`;
     }
 
     function normalizeTags(s){
@@ -820,7 +820,7 @@
       const src = item.src || playerDownloadBtn.dataset.src || "";
       const title = item.title || playerTitleEl.textContent || "";
       const file = item.file || playerDownloadBtn.dataset.file || (title ? title + ".mp4" : "WallFlow.mp4");
-      const u = new URL("wallpaper.html", window.location.href);
+      const u = new URL("../wallpaper/", window.location.href);
       u.searchParams.set("src", src);
       u.searchParams.set("title", title);
       u.searchParams.set("file", file);
@@ -869,7 +869,7 @@
       <button type="button" id="langWarningOk" data-i18n="warning_ok">Compris</button>
     </div>
   </div>
-  <script src="lang.js"></script>
+  <script src="../lang.js"></script>
   <script>
     (function(){
       var burger = document.getElementById("burgerBtn");

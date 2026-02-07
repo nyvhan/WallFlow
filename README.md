@@ -26,13 +26,14 @@ Site web statique qui présente une collection de wallpapers vidéo (.mp4) en ha
 ```
 WallFlow/
 ├── index.html          # Accueil
-├── collection.html     # Toute la collection
-├── wallpaper.html      # Page détail d’un wallpaper (src, title, file en query)
-├── aide.html           # Guide Lively Wallpaper
-├── contact.html        # Contact
-├── submit.html         # Soumettre un wallpaper
-├── creator.html        # À propos
-├── 404.html            # Page introuvable
+├── 404.html            # Redirection vers /404/ (GitHub Pages)
+├── collection/         # Toute la collection (index.html)
+├── wallpaper/      # Page détail d’un wallpaper (src, title, file en query)
+├── aide/               # Guide Lively Wallpaper
+├── contact/            # Contact
+├── submit/             # Soumettre un wallpaper
+├── creator/            # À propos
+├── 404/                # Page introuvable
 ├── lang.js             # i18n (FR/EN/ES)
 ├── preview.png         # Image de prévisualisation (og:image, Twitter)
 ├── icons/              # Logo WallFlow, réseaux (Discord, Steam, etc.)
@@ -48,8 +49,8 @@ WallFlow/
 3. Branch : `main` (ou `master`), dossier : `/ (root)`
 4. Sauvegarde : le site sera disponible à `https://<username>.github.io/<repo>/`
 
-Tous les liens du site sont **relatifs** (`index.html`, `icons/`, `wallpapers/`, etc.), en minuscules et sans espaces, pour une compatibilité optimale avec GitHub Pages.
+Tous les liens du site sont **relatifs** (`./`, `collection/`, `icons/`, `wallpapers/`, etc.), en minuscules et sans espaces, pour une compatibilité optimale avec GitHub Pages.
 
 ## Licence
 
-© 2026 WallFlow • Contenu et visuels sous droits réservés. Pour toute demande de retrait : voir [Contact](contact.html).
+© 2026 WallFlow • Contenu et visuels sous droits réservés. Pour toute demande de retrait : voir [Contact](contact/).

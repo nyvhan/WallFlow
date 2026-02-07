@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WallFlow — Page introuvable</title>
+  <meta name="color-scheme" content="dark light" />
+  <link rel="icon" type="image/x-icon" href="../icons/wallflow---logo.ico" />
+  <meta name="description" content="La référence des fonds d'écran animés en 4K pour PC. Téléchargement gratuit et soumission de créations." />
+  <meta property="og:title" content="WallFlow — Premium .mp4 Wallpapers" />
+  <meta property="og:description" content="La référence des fonds d'écran animés en 4K pour PC. Téléchargement gratuit et soumission de créations." />
+  <meta property="og:image" content="../preview.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WallFlow — Premium .mp4 Wallpapers" />
+  <meta name="twitter:description" content="La référence des fonds d'écran animés en 4K pour PC. Téléchargement gratuit et soumission de créations." />
+  <meta name="twitter:image" content="../preview.png" />
+  <style>
+    :root{
+      --bg: #0b0d12;
+      --bg2:#07080c;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.62);
+      --max: 1200px;
+      --sf: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ overflow-x: hidden; scrollbar-color: rgba(255,255,255,.12) var(--bg); scrollbar-width: thin; }
+    html::-webkit-scrollbar{ width: 10px; }
+    html::-webkit-scrollbar-track{ background: var(--bg); }
+    html::-webkit-scrollbar-thumb{ background: rgba(255,255,255,.12); border-radius: 999px; }
+    html::-webkit-scrollbar-thumb:hover{ background: rgba(255,255,255,.18); }
+    html,body{ min-height:100%; }
+    body{
+      margin:0;
+      font-family: var(--sf);
+      color:var(--text);
+      background:
+        radial-gradient(1100px 700px at 18% -10%, rgba(255,255,255,.08), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(82, 170, 255,.10), transparent 55%),
+        radial-gradient(900px 600px at 60% 90%, rgba(255, 88, 200,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      background-color: var(--bg);
+      overflow-x:hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: -.01em;
+    }
+    a{ color:inherit; text-decoration:none; }
+    button{ font:inherit; color:inherit; }
+
+    body::before{
+      content:"";
+      position:fixed; inset:-40%;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      opacity:.14;
+      pointer-events:none;
+      transform: translateZ(0);
+      animation: grain 8s steps(8) infinite;
+    }
+    @keyframes grain{
+      0%{ transform: translate3d(-2%, -2%, 0) }
+      20%{ transform: translate3d(3%, -1%, 0) }
+      40%{ transform: translate3d(2%, 4%, 0) }
+      60%{ transform: translate3d(-3%, 2%, 0) }
+      80%{ transform: translate3d(-1%, -3%, 0) }
+      100%{ transform: translate3d(-2%, -2%, 0) }
+    }
+
+    .wrap{ width:min(var(--max), 100% - 2*clamp(18px, 4vw, 44px)); margin-inline:auto; }
+    .topPad{ padding-top: 78px; }
+
+    .nav{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:50;
+      padding: 14px 0;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(12,14,20,.66), rgba(12,14,20,.28));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .navRow{ display:flex; align-items:center; justify-content:space-between; gap: 14px; }
+    .brand{ display:flex; align-items:center; gap: 10px; min-width: 180px; }
+    .logoWrap{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 0 16px rgba(255,255,255,.06), 0 0 28px rgba(82,170,255,.1);
+      overflow: hidden;
+      animation: logoSpin 12s linear infinite;
+    }
+    .logo{ width: 28px; height: 28px; object-fit: contain; display: block; animation: logoBreath 3s ease-in-out infinite; }
+    @keyframes logoSpin{ to{ transform: rotate(360deg); } }
+    @keyframes logoBreath{ 0%, 100%{ opacity: 1; transform: scale(1); } 50%{ opacity: .92; transform: scale(1.04); } }
+    .brand b{ font-weight: 650; letter-spacing: -.02em; }
+    .brand span{ color:var(--muted); font-weight: 520; font-size: 12.5px; }
+
+    .navRight{ display:flex; align-items:center; justify-content:flex-end; gap: 10px; min-width: 320px; }
+    .chip{ padding: 9px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); color: rgba(255,255,255,.78); font-size: 12.5px; font-weight: 560; transition: transform .25s ease, background .25s ease, border-color .25s ease; user-select:none; white-space:nowrap; }
+    .chip:hover{ transform: translateY(-1px); background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.14); }
+
+    .burgerBtn{ display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: none; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.9); cursor: pointer; flex-shrink: 0; }
+    .burgerBtn:hover{ background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.18); }
+    .burgerBtn span{ position: relative; display: block; width: 20px; height: 2px; background: currentColor; border-radius: 1px; }
+    .burgerBtn span::before, .burgerBtn span::after{ content: ""; position: absolute; left: 0; width: 20px; height: 2px; background: currentColor; border-radius: 1px; }
+    .burgerBtn span::before{ top: -7px; }
+    .burgerBtn span::after{ top: 7px; }
+    .navOverlay{ position: fixed; inset: 0; z-index: 55; background: rgba(0,0,0,.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s ease; }
+    .navOverlay.is-open{ opacity: 1; visibility: visible; }
+    .navDrawer{ position: fixed; top: 0; right: 0; width: min(280px, 85vw); height: 100%; background: linear-gradient(180deg, rgba(12,14,20,.98), rgba(8,10,14,.98)); border-left: 1px solid rgba(255,255,255,.1); box-shadow: -20px 0 60px rgba(0,0,0,.4); padding: 80px 24px 24px; display: flex; flex-direction: column; gap: 8px; transform: translateX(100%); transition: transform .3s ease; z-index: 56; }
+    .navOverlay.is-open .navDrawer{ transform: translateX(0); }
+    .navDrawer .chip{ display: block; text-align: center; padding: 14px 16px; font-size: 15px; }
+
+    .errorSection{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 180px);
+      padding: clamp(48px, 10vw, 80px) 24px;
+      text-align: center;
+    }
+    .errorCode{
+      font-size: clamp(100px, 22vw, 180px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.04em;
+      color: rgba(255,255,255,.92);
+      text-shadow:
+        0 0 30px rgba(82,170,255,.35),
+        0 0 60px rgba(82,170,255,.2),
+        0 0 100px rgba(255,255,255,.08);
+      margin: 0 0 16px;
+    }
+    .errorMessage{
+      font-size: clamp(18px, 3.5vw, 24px);
+      font-weight: 560;
+      color: rgba(255,255,255,.78);
+      margin: 0 0 40px;
+      max-width: 28ch;
+      line-height: 1.4;
+    }
+    .btnHome{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.2);
+      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.08));
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      cursor: pointer;
+      transition: box-shadow .3s ease, transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btnHome:hover{
+      background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.1));
+      border-color: rgba(255,255,255,.3);
+      transform: translateY(-1px);
+      box-shadow: 0 0 28px rgba(82, 170, 255, .35), 0 0 50px rgba(82, 170, 255, .15);
+    }
+
+    footer{ padding: 20px 16px; margin-top: 8px; background: transparent !important; border: none !important; box-shadow: none !important; text-align: center; }
+    footer p{ background: transparent !important; margin: 0; }
+    .footerLine{ font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.5; max-width: 72ch; margin: 0 auto; }
+    .footerLine a{ color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .footerLine a:hover{ color: rgba(255,255,255,0.55); }
+
+    @media (max-width: 980px){ .navRight{ display:none; } .burgerBtn{ display: inline-flex; } }
+    @media (max-width: 768px){ .brand span{ display: none; } .brand{ min-width: 0; } .errorCode{ font-size: clamp(64px, 16vw, 100px); } }
+    @media (max-width: 640px){ .brand span{ display:none; } }
+    @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition: none !important; } body::before{ display:none; } }
+  </style>
+</head>
+<body>
+  <header class="nav" role="banner">
+    <div class="wrap navRow">
+      <a class="brand" href="../">
+        <span class="logoWrap"><img class="logo" src="../icons/wallflow---logo.ico" alt="WallFlow" /></span>
+        <div style="display:flex; flex-direction:column; line-height:1.05;">
+          <b>WallFlow</b>
+          <span>Page introuvable</span>
+        </div>
+      </a>
+      <nav class="navRight" aria-label="Navigation">
+        <a class="chip" href="../">Accueil</a>
+        <a class="chip" href="../collection/">Toute la collection</a>
+        <a class="chip" href="../aide/">Aide</a>
+        <a class="chip" href="../contact/">Contact</a>
+        <a class="chip" href="../submit/">Soumettre</a>
+        <a class="chip" href="../creator/">À propos</a>
+      </nav>
+      <button type="button" class="burgerBtn" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navDrawer"><span></span></button>
+    </div>
+  </header>
+  <div class="navOverlay" id="navOverlay" aria-hidden="true">
+    <div class="navDrawer" id="navDrawer" role="dialog" aria-label="Menu de navigation">
+      <a class="chip" href="../">Accueil</a>
+      <a class="chip" href="../collection/">Toute la collection</a>
+      <a class="chip" href="../aide/">Aide</a>
+      <a class="chip" href="../contact/">Contact</a>
+      <a class="chip" href="../submit/">Soumettre</a>
+      <a class="chip" href="../creator/">À propos</a>
+    </div>
+  </div>
+
+  <main class="wrap topPad">
+    <section class="errorSection" aria-label="Page introuvable">
+      <h1 class="errorCode" aria-hidden="true">404</h1>
+      <p class="errorMessage">Oups ! Ce wallpaper s'est envolé…</p>
+      <a class="btnHome" href="../">Retour à l'accueil</a>
+    </section>
+
+    <footer>
+      <p class="footerLine">© 2026 WallFlow • Premium Wallpapers • Pour toute demande de retrait : <a href="../contact/">Contact</a></p>
+    </footer>
+  </main>
+  <script>
+    (function(){
+      var burger = document.getElementById("burgerBtn");
+      var overlay = document.getElementById("navOverlay");
+      var drawer = document.getElementById("navDrawer");
+      function openNav(){ overlay.classList.add("is-open"); overlay.setAttribute("aria-hidden","false"); if(burger) burger.setAttribute("aria-expanded","true"); document.body.style.overflow = "hidden"; }
+      function closeNav(){ overlay.classList.remove("is-open"); overlay.setAttribute("aria-hidden","true"); if(burger) burger.setAttribute("aria-expanded","false"); document.body.style.overflow = ""; }
+      if(burger) burger.addEventListener("click", function(){ overlay.classList.contains("is-open") ? closeNav() : openNav(); });
+      overlay.addEventListener("click", function(e){ if(e.target === overlay) closeNav(); });
+      if(drawer){ var links = drawer.querySelectorAll("a"); for(var i=0;i<links.length;i++) links[i].addEventListener("click", closeNav); }
+      document.addEventListener("keydown", function(e){ if(e.key === "Escape" && overlay.classList.contains("is-open")) closeNav(); });
+    })();
+  </script>
+</body>
+</html>
