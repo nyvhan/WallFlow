@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WallFlow — Accueil Premium</title>
+  <meta name="color-scheme" content="dark light" />
+  <link rel="icon" type="image/x-icon" href="icons/wallflow---logo.ico" />
+  <meta name="description" content="La référence des fonds d'écran animés en 4K pour PC. Téléchargement gratuit et soumission de créations." />
+  <meta property="og:title" content="WallFlow — Premium .mp4 Wallpapers" />
+  <meta property="og:description" content="La référence des fonds d'écran animés en 4K pour PC. Téléchargement gratuit et soumission de créations." />
+  <meta property="og:image" content="preview.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WallFlow — Premium .mp4 Wallpapers" />
+  <meta name="twitter:description" content="La référence des fonds d'écran animés en 4K pour PC. Téléchargement gratuit et soumission de créations." />
+  <meta name="twitter:image" content="preview.png" />
+  <style>
+    :root{
+      --bg: #0b0d12;
+      --bg2:#07080c;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.62);
+      --shadow: 0 30px 80px rgba(0,0,0,.45);
+      --shadow2: 0 18px 44px rgba(0,0,0,.38);
+      --radius: 22px;
+      --radius2: 28px;
+      --max: 1200px;
+      --sf: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --accentBlue: rgba(10, 132, 255, .95);
+      --good: rgba(48, 209, 88, .95);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ overflow-x: hidden; scrollbar-color: rgba(255,255,255,.12) var(--bg); scrollbar-width: thin; }
+    html::-webkit-scrollbar{ width: 10px; }
+    html::-webkit-scrollbar-track{ background: var(--bg); }
+    html::-webkit-scrollbar-thumb{ background: rgba(255,255,255,.12); border-radius: 999px; }
+    html::-webkit-scrollbar-thumb:hover{ background: rgba(255,255,255,.18); }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--sf);
+      color:var(--text);
+      background:
+        radial-gradient(1100px 700px at 18% -10%, rgba(255,255,255,.08), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(82, 170, 255,.10), transparent 55%),
+        radial-gradient(900px 600px at 60% 90%, rgba(255, 88, 200,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      background-color: var(--bg);
+      overflow-x:hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: -.01em;
+    }
+    a{ color:inherit; text-decoration:none; }
+    button{ font:inherit; color:inherit; }
+    video{ max-width:100%; display:block; }
+
+    body::before{
+      content:"";
+      position:fixed; inset:-40%;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      opacity:.14;
+      pointer-events:none;
+      transform: translateZ(0);
+      animation: grain 8s steps(8) infinite;
+    }
+    @keyframes grain{
+      0%{ transform: translate3d(-2%, -2%, 0) }
+      20%{ transform: translate3d(3%, -1%, 0) }
+      40%{ transform: translate3d(2%, 4%, 0) }
+      60%{ transform: translate3d(-3%, 2%, 0) }
+      80%{ transform: translate3d(-1%, -3%, 0) }
+      100%{ transform: translate3d(-2%, -2%, 0) }
+    }
+
+    .wrap{ width:min(var(--max), 100% - 2*clamp(18px, 4vw, 44px)); margin-inline:auto; }
+    .topPad{ padding-top: 78px; }
+
+    /* NAV */
+    .nav{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:50;
+      padding: 14px 0;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(12,14,20,.66), rgba(12,14,20,.28));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .navRow{ display:flex; align-items:center; justify-content:space-between; gap: 14px; }
+    .brand{ display:flex; align-items:center; gap: 10px; min-width: 180px; }
+    .logoWrap{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 0 16px rgba(255,255,255,.06), 0 0 28px rgba(82,170,255,.1);
+      overflow: hidden;
+      animation: logoSpin 12s linear infinite;
+    }
+    .logo{
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      display: block;
+      animation: logoBreath 3s ease-in-out infinite;
+    }
+    @keyframes logoSpin{ to{ transform: rotate(360deg); } }
+    @keyframes logoBreath{ 0%, 100%{ opacity: 1; transform: scale(1); } 50%{ opacity: .92; transform: scale(1.04); } }
+    .brand b{ font-weight: 650; letter-spacing: -.02em; }
+    .brand span{ color:var(--muted); font-weight: 520; font-size: 12.5px; }
+
+    .navRight{ display:flex; align-items:center; justify-content:flex-end; gap: 10px; min-width: 320px; }
+    .chip{ padding: 9px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); color: rgba(255,255,255,.78); font-size: 12.5px; font-weight: 560; transition: transform .25s ease, background .25s ease, border-color .25s ease; user-select:none; white-space:nowrap; }
+    .chip:hover{ transform: translateY(-1px); background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.14); }
+
+    .burgerBtn{ display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: none; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.9); cursor: pointer; transition: background .2s, border-color .2s; position: relative; flex-shrink: 0; }
+    .burgerBtn:hover{ background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.18); }
+    .burgerBtn span{ position: relative; display: block; width: 20px; height: 2px; background: currentColor; border-radius: 1px; }
+    .burgerBtn span::before, .burgerBtn span::after{ content: ""; position: absolute; left: 0; width: 20px; height: 2px; background: currentColor; border-radius: 1px; }
+    .burgerBtn span::before{ top: -7px; }
+    .burgerBtn span::after{ top: 7px; }
+
+    .navOverlay{ position: fixed; inset: 0; z-index: 55; background: rgba(0,0,0,.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s ease; }
+    .navOverlay.is-open{ opacity: 1; visibility: visible; }
+    .navDrawer{ position: fixed; top: 0; right: 0; width: min(280px, 85vw); height: 100%; background: linear-gradient(180deg, rgba(12,14,20,.98), rgba(8,10,14,.98)); border-left: 1px solid rgba(255,255,255,.1); box-shadow: -20px 0 60px rgba(0,0,0,.4); padding: 80px 24px 24px; display: flex; flex-direction: column; gap: 8px; transform: translateX(100%); transition: transform .3s ease; z-index: 56; }
+    .navOverlay.is-open .navDrawer{ transform: translateX(0); }
+    .navDrawer .chip{ display: block; text-align: center; padding: 14px 16px; font-size: 15px; }
+
+    /* HERO (video background) */
+    .hero{ position:relative; padding: clamp(26px, 5vw, 56px) 0 34px; }
+    .heroCard{ border-radius: var(--radius2); overflow:hidden; position:relative; min-height: clamp(420px, 56vh, 640px); background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.62)); box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.10); transform: translateZ(0); isolation:isolate; }
+    .heroVideo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform: scale(1.02); filter: brightness(.4) saturate(1.05) contrast(1.05); }
+    .heroCard::before{ content:""; position:absolute; inset:-30%; background: radial-gradient(700px 480px at 15% 25%, rgba(255,255,255,.14), transparent 60%), radial-gradient(600px 420px at 85% 30%, rgba(120, 190, 255,.18), transparent 62%), radial-gradient(900px 600px at 55% 110%, rgba(255, 80, 200,.10), transparent 62%); opacity:.9; animation: floatLight 9s ease-in-out infinite; pointer-events:none; z-index: 1; }
+    @keyframes floatLight{ 0%,100%{ transform: translate3d(0,0,0) } 50%{ transform: translate3d(2%, -2%, 0) } }
+    .heroInner{ position:absolute; inset:0; display:flex; align-items:flex-end; padding: clamp(18px, 3vw, 28px); z-index: 2; }
+    .heroGlass{ width: min(720px, 100%); border-radius: calc(var(--radius) + 8px); padding: clamp(16px, 2.6vw, 22px); background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06)); border: 1px solid rgba(255,255,255,.14); box-shadow: var(--shadow2); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .kicker{ display:flex; align-items:center; gap: 10px; color: rgba(255,255,255,.74); font-size: 12.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .dot{ width: 7px; height:7px; border-radius: 999px; background: var(--good); box-shadow: 0 0 0 6px rgba(48, 209, 88, .12); }
+    h1{ margin: 10px 0 8px; font-size: clamp(28px, 4.2vw, 44px); line-height: 1.05; letter-spacing: -.03em; font-weight: 720; }
+    .sub{ margin: 0 0 14px; color: rgba(255,255,255,.72); font-size: clamp(13.5px, 1.6vw, 15.5px); line-height: 1.55; max-width: 62ch; }
+
+    .heroActions{ display:flex; gap: 10px; flex-wrap: wrap; align-items:center; }
+    .btn{ display:inline-flex; align-items:center; gap: 10px; padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.08); box-shadow: 0 16px 34px rgba(0,0,0,.22); transition: transform .25s ease, background .25s ease, border-color .25s ease; font-weight: 650; font-size: 13px; letter-spacing: -.01em; cursor:pointer; user-select:none; }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.22); }
+    .btn.secondary{ background: rgba(0,0,0,.22); border-color: rgba(255,255,255,.12); color: rgba(255,255,255,.86); }
+
+    .section{ padding: 22px 0 44px; }
+    .sectionHead{ display:flex; align-items:flex-end; justify-content:space-between; gap: 18px; margin: 18px 0 16px; }
+    .sectionHead h2{ margin:0; font-size: 18px; font-weight: 720; letter-spacing: -.02em; }
+    .sectionHead p{ margin:0; color: rgba(255,255,255,.60); font-size: 13px; line-height: 1.5; max-width: 66ch; }
+
+    /* GRID */
+    .grid{ display:grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; padding-top: 8px; }
+    .card{ grid-column: span 4; border-radius: var(--radius2); overflow:hidden; position:relative; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); box-shadow: 0 20px 60px rgba(0,0,0,.28); transform: translateZ(0); isolation:isolate; }
+    .thumb{ position:relative; aspect-ratio: 4 / 5; overflow:hidden; background: radial-gradient(120% 120% at 30% 20%, rgba(255,255,255,.08), rgba(255,255,255,.02)), linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.65)); }
+
+    .thumb video{ position:absolute; inset:0; width:100%; height:100%; object-fit: cover; transform: scale(1.02); transition: transform .75s cubic-bezier(.2,.8,.2,1), filter .75s cubic-bezier(.2,.8,.2,1), opacity .25s ease; filter: saturate(1.06) contrast(1.03) brightness(.98); background: #000; opacity: 0; }
+    .card:hover .thumb video{ transform: scale(1.075); filter: saturate(1.10) contrast(1.05) brightness(1.02); }
+    .thumb::after{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.15) 35%, rgba(0,0,0,.60)); pointer-events:none; z-index: 2; }
+
+    .info{ position:absolute; left: 12px; right: 12px; bottom: 12px; padding: 12px 12px; border-radius: 18px; background: linear-gradient(180deg, rgba(12,14,18,.16), rgba(12,14,18,.44)); border: 1px solid rgba(255,255,255,.10); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 16px 40px rgba(0,0,0,.28); display:flex; align-items:flex-end; justify-content:space-between; gap: 12px; z-index: 3; }
+    .title{ min-width:0; }
+    .title b{ display:block; font-size: 13.5px; font-weight: 720; letter-spacing: -.02em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .title small{ display:block; margin-top: 4px; color: rgba(255,255,255,.62); font-size: 12px; font-weight: 560; }
+
+    .dl{ display:inline-flex; align-items:center; padding: 9px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.08); color: rgba(255,255,255,.92); font-size: 12.5px; font-weight: 680; letter-spacing: -.01em; opacity: 0; transform: translateY(6px); transition: opacity .25s ease, transform .25s ease, background .25s ease, border-color .25s ease; cursor:pointer; user-select:none; white-space:nowrap; }
+    .card:hover .dl{ opacity: 1; transform: translateY(0); }
+    .dl:hover{ background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.20); }
+
+    .badgeRow{ position:absolute; top: 12px; left: 12px; right: 12px; display:flex; justify-content:space-between; gap: 10px; z-index: 3; pointer-events:none; }
+    .badge{ display:inline-flex; align-items:center; gap: 8px; padding: 8px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.24); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: rgba(255,255,255,.84); font-size: 12px; font-weight: 720; letter-spacing: .02em; white-space:nowrap; }
+    .pulse{ width: 7px; height:7px; border-radius: 999px; background: var(--accentBlue); box-shadow: 0 0 0 0 rgba(10, 132, 255, .35); animation: pulse 1.8s ease-in-out infinite; }
+    @keyframes pulse{ 0%{ box-shadow: 0 0 0 0 rgba(10, 132, 255, .38) } 70%{ box-shadow: 0 0 0 12px rgba(10, 132, 255, 0) } 100%{ box-shadow: 0 0 0 0 rgba(10, 132, 255, 0) } }
+    .tag4k{ border-color: rgba(255,255,255,.12); background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05)); color: rgba(255,255,255,.86); }
+
+    .ctaWide{ margin-top: 18px; display:flex; justify-content:center; }
+    .ctaWide a{ width: min(860px, 100%); text-align:center; padding: 16px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 18px 44px rgba(0,0,0,.34); font-weight: 720; letter-spacing: -.01em; transition: transform .25s ease, background .25s ease, border-color .25s ease; }
+    .ctaWide a:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); }
+
+    main{ background: transparent; }
+    footer{ padding: 20px 16px; margin-top: 8px; background: transparent !important; border: none !important; box-shadow: none !important; text-align: center; }
+    footer p{ background: transparent !important; margin: 0; }
+    .footerLine{ font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.5; max-width: 72ch; margin: 0 auto; }
+    .footerLine a{ color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .footerLine a:hover{ color: rgba(255,255,255,0.55); }
+
+    /* ——— Sélecteur de langue (menu custom Premium) ——— */
+    .langPicker{ position: relative; margin-right: 6px; }
+    .langPickerTrigger{
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.88);
+      font-size: 12px; font-weight: 560;
+      cursor: pointer;
+      transition: border-color .25s ease, background .25s ease;
+    }
+    .langPickerTrigger:hover{ border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.07); }
+    .langPickerChevron{ width: 12px; height: 12px; opacity: .8; transition: transform .25s ease; }
+    .langPicker.is-open .langPickerChevron{ transform: rotate(180deg); }
+    .langPickerMenu{
+      position: absolute; top: calc(100% + 8px); right: 0;
+      min-width: 200px;
+      padding: 8px;
+      border-radius: 16px;
+      background: rgba(0,0,0,.7);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 20px 50px rgba(0,0,0,.45);
+      opacity: 0; visibility: hidden; transform: translateY(-6px);
+      transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
+      z-index: 60;
+    }
+    .langPicker.is-open .langPickerMenu{ opacity: 1; visibility: visible; transform: translateY(0); }
+    .langPickerItem{
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; padding: 10px 14px;
+      border: none; border-radius: 12px;
+      background: transparent;
+      color: rgba(255,255,255,.92);
+      font-size: 13px; font-weight: 520;
+      cursor: pointer;
+      transition: background .2s ease;
+      text-align: left;
+    }
+    .langPickerItem:hover{ background: rgba(255,255,255,.1); }
+    .langPickerItem.is-active{ background: rgba(255,255,255,.08); color: #fff; }
+    .langPickerOrigin{ font-size: 11px; opacity: .6; font-weight: 450; margin-left: 6px; white-space: nowrap; }
+
+    /* ——— Pop-up avertissement traduction (Glassmorphism) ——— */
+    #langWarningOverlay{
+      position: fixed; inset: 0; z-index: 110;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+      background: rgba(0,0,0,.6);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      opacity: 0; visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease;
+    }
+    #langWarningOverlay.is-open{ opacity: 1; visibility: visible; }
+    #langWarningBox{
+      max-width: 420px;
+      padding: 28px 24px;
+      border-radius: 22px;
+      background: rgba(12,14,20,.88);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+      text-align: center;
+    }
+    #langWarningMessage{ margin: 0 0 24px; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.88); }
+    #langWarningOk{
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+    }
+    #langWarningOk:hover{ background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.25); }
+
+    @media (max-width: 980px){ .navRight{ display:none; } .burgerBtn{ display: inline-flex; } .card{ grid-column: span 6; } }
+    @media (max-width: 640px){ .brand span{ display:none; } .card{ grid-column: span 12; } }
+
+    @media (max-width: 768px){
+      .navRight{ display: none !important; }
+      .burgerBtn{ display: inline-flex; }
+      .brand span{ display: none; }
+      .brand{ min-width: 0; }
+      .grid{ grid-template-columns: 1fr; }
+      .card{ grid-column: span 1; }
+      .hero h1{ font-size: clamp(22px, 6vw, 28px); }
+      .heroGlass .sub{ font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition: none !important; scroll-behavior:auto !important; } body::before{ display:none; } }
+  </style>
+</head>
+<body>
+  <header class="nav" role="banner">
+    <div class="wrap navRow">
+      <a class="brand" href="index.html">
+        <span class="logoWrap"><img class="logo" src="icons/wallflow---logo.ico" alt="WallFlow" /></span>
+        <div style="display:flex; flex-direction:column; line-height:1.05;">
+          <b>WallFlow</b>
+          <span data-i18n="nav_brand_index">Accueil Premium</span>
+        </div>
+      </a>
+      <nav class="navRight" aria-label="Navigation">
+        <div class="langPicker" id="langPicker">
+          <button type="button" class="langPickerTrigger" id="langPickerTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Choisir la langue">
+            <span class="langPickerLabel" id="langPickerLabel">FR</span>
+            <svg class="langPickerChevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="langPickerMenu" id="langPickerMenu" role="menu" aria-label="Langue">
+            <button type="button" class="langPickerItem" role="menuitem" data-lang="fr">Français <span class="langPickerOrigin">(Langue d'origine)</span></button>
+            <button type="button" class="langPickerItem" role="menuitem" data-lang="en">English</button>
+            <button type="button" class="langPickerItem" role="menuitem" data-lang="es">Español</button>
+          </div>
+        </div>
+        <a class="chip" href="index.html" data-i18n="nav_home">Accueil</a>
+        <a class="chip" href="collection.html" data-i18n="nav_collection">Toute la collection</a>
+        <a class="chip" href="aide.html" data-i18n="nav_help">Aide</a>
+        <a class="chip" href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a class="chip" href="submit.html" data-i18n="nav_submit">Soumettre</a>
+        <a class="chip" href="creator.html" data-i18n="nav_about">À propos</a>
+      </nav>
+      <button type="button" class="burgerBtn" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navDrawer"><span></span></button>
+    </div>
+  </header>
+  <div class="navOverlay" id="navOverlay" aria-hidden="true">
+    <div class="navDrawer" id="navDrawer" role="dialog" aria-label="Menu de navigation">
+      <a class="chip" href="index.html" data-i18n="nav_home">Accueil</a>
+      <a class="chip" href="collection.html" data-i18n="nav_collection">Toute la collection</a>
+      <a class="chip" href="aide.html" data-i18n="nav_help">Aide</a>
+      <a class="chip" href="contact.html" data-i18n="nav_contact">Contact</a>
+      <a class="chip" href="submit.html" data-i18n="nav_submit">Soumettre</a>
+      <a class="chip" href="creator.html" data-i18n="nav_about">À propos</a>
+    </div>
+  </div>
+
+  <main class="wrap topPad">
+    <section class="hero" aria-label="Hero">
+      <div class="heroCard">
+        <video class="heroVideo" autoplay loop muted playsinline preload="metadata" src="wallpapers/jinx-neon-arcane.mp4"></video>
+        <div class="heroInner">
+          <div class="heroGlass">
+            <div class="kicker"><span class="dot"></span> <span data-i18n="index_hero_kicker">WallFlow Premium</span></div>
+            <h1 data-i18n="index_hero_title">Des fonds d’écran .mp4 pour PC</h1>
+            <p class="sub" data-i18n="index_hero_sub">Performance : les vidéos de la grille ne se chargent et ne se lancent que lorsque tu survoles une carte.</p>
+            <div class="heroActions">
+              <a class="btn" href="wallpaper.html?src=wallpapers%2Fjinx-neon-arcane.mp4&amp;title=jinx-neon-arcane&amp;file=jinx-neon-arcane.mp4" data-i18n="index_hero_see">Voir Jinx</a>
+              <a class="btn secondary" href="collection.html" data-i18n="index_hero_collection">Toute la collection</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="premium" aria-label="Sélection Premium">      <div class="sectionHead">
+        <div>
+          <h2 data-i18n="index_section_premium">Premium</h2>
+          <p data-i18n="index_section_sub">Jinx · GTA VI · Space · Sunset · Lofi Coffee · Lofi Studio</p>
+        </div>
+      </div>
+      <div class="grid" id="grid">
+        <article class="card" data-title="jinx-neon-arcane" data-file="jinx-neon-arcane.mp4" data-src="wallpapers/jinx-neon-arcane.mp4" data-tags="jinx neon arcane">
+          <div class="thumb">
+            <div class="badgeRow"><span class="badge"><span class="pulse"></span> LIVE</span><span class="badge tag4k">4K Ultra HD</span></div>
+            <video class="wallVideo" muted playsinline preload="none" data-src="wallpapers/jinx-neon-arcane.mp4"></video>
+          </div>
+          <div class="info"><div class="title"><b>jinx-neon-arcane</b><small>MP4 · Live</small></div></div>
+        </article>
+
+        <article class="card" data-title="grand-theft-auto-vi" data-file="grand-theft-auto-vi.mp4" data-src="wallpapers/grand-theft-auto-vi.mp4" data-tags="grand theft auto vi gta 6">
+          <div class="thumb">
+            <div class="badgeRow"><span class="badge"><span class="pulse"></span> LIVE</span><span class="badge tag4k">4K Ultra HD</span></div>
+            <video class="wallVideo" muted playsinline preload="none" data-src="wallpapers/grand-theft-auto-vi.mp4"></video>
+          </div>
+          <div class="info"><div class="title"><b>grand-theft-auto-vi</b><small>MP4 · Live</small></div></div>
+        </article>
+
+        <article class="card" data-title="Outer Space" data-file="1661601763-1661601763-4k-ffly-ly-outer-space-live-wallpapers.mp4" data-src="wallpapers/1661601763-1661601763-4k-ffly-ly-outer-space-live-wallpapers.mp4" data-tags="space outer space 4k">
+          <div class="thumb">
+            <div class="badgeRow"><span class="badge"><span class="pulse"></span> LIVE</span><span class="badge tag4k">4K Ultra HD</span></div>
+            <video class="wallVideo" muted playsinline preload="none" data-src="wallpapers/1661601763-1661601763-4k-ffly-ly-outer-space-live-wallpapers.mp4"></video>
+          </div>
+          <div class="info"><div class="title"><b>Outer Space</b><small>MP4 · Live</small></div></div>
+        </article>
+
+        <article class="card" data-title="Sunset Synthwave Road" data-file="sunset-synthwave-road.mp4" data-src="wallpapers/sunset-synthwave-road.mp4" data-tags="sunset synthwave road">
+          <div class="thumb">
+            <div class="badgeRow"><span class="badge"><span class="pulse"></span> LIVE</span><span class="badge tag4k">4K Ultra HD</span></div>
+            <video class="wallVideo" muted playsinline preload="none" data-src="wallpapers/sunset-synthwave-road.mp4"></video>
+          </div>
+          <div class="info"><div class="title"><b>Sunset Synthwave Road</b><small>MP4 · Live</small></div></div>
+        </article>
+
+        <article class="card" data-title="Lo-Fi-Coffee-Shop" data-file="lo-fi-coffee-shop.mp4" data-src="wallpapers/lo-fi-coffee-shop.mp4" data-tags="lofi coffee shop">
+          <div class="thumb">
+            <div class="badgeRow"><span class="badge"><span class="pulse"></span> LIVE</span><span class="badge tag4k">4K Ultra HD</span></div>
+            <video class="wallVideo" muted playsinline preload="none" data-src="wallpapers/lo-fi-coffee-shop.mp4"></video>
+          </div>
+          <div class="info"><div class="title"><b>Lo-Fi-Coffee-Shop</b><small>MP4 · Live</small></div></div>
+        </article>
+
+        <article class="card" data-title="Lofi-Studio" data-file="lofi-studio.mp4" data-src="wallpapers/lofi-studio.mp4" data-tags="lofi studio">
+          <div class="thumb">
+            <div class="badgeRow"><span class="badge"><span class="pulse"></span> LIVE</span><span class="badge tag4k">4K Ultra HD</span></div>
+            <video class="wallVideo" muted playsinline preload="none" data-src="wallpapers/lofi-studio.mp4"></video>
+          </div>
+          <div class="info"><div class="title"><b>Lofi-Studio</b><small>MP4 · Live</small></div></div>
+        </article>
+      </div>
+
+      <div class="ctaWide" aria-label="Explorer toute la collection">
+        <a href="collection.html" data-i18n="index_cta">Explorer toute la collection</a>
+      </div>
+    </section>
+
+    <footer>
+      <p class="footerLine" data-i18n="footer_line" data-i18n-html="true">© 2026 WallFlow • Premium Wallpapers • Pour toute demande de retrait : <a href="contact.html">Contact</a></p>
+    </footer>  </main>
+
+  <div id="langWarningOverlay" role="dialog" aria-modal="true" aria-labelledby="langWarningMessage">
+    <div id="langWarningBox">
+      <p id="langWarningMessage"></p>
+      <button type="button" id="langWarningOk" data-i18n="warning_ok">Compris</button>
+    </div>
+  </div>
+
+  <script src="lang.js"></script>
+  <script>
+    function buildDetailsUrl({ title, src, file }){
+      const params = new URLSearchParams();
+      if (src) params.set("src", src);
+      if (title) params.set("title", title);
+      if (file) params.set("file", file);
+      return `wallpaper.html?${params.toString()}`;
+    }
+
+    async function ensureVideoLoaded(video){
+      if (video.dataset.loaded === "1") return;
+      const src = video.dataset.src;
+      if (!src) return;
+
+      video.src = src;
+      video.load();
+
+      await new Promise(resolve => {
+        const done = () => resolve();
+        video.addEventListener("loadeddata", done, { once: true });
+        video.addEventListener("error", done, { once: true });
+      });
+
+      video.dataset.loaded = "1";
+      video.style.opacity = "1";
+
+      try { video.pause(); } catch(_) {}
+      try { video.currentTime = 0; } catch(_) {}
+    }
+
+    // Hover: charge + lit uniquement au survol ; Click: ouvre la page de détails
+    document.querySelectorAll(".card").forEach(card => {
+      const vid = card.querySelector("video.wallVideo");
+      if (!vid) return;
+
+      vid.muted = true;
+      try { vid.pause(); } catch(_) {}
+
+      card.addEventListener("mouseenter", async () => {
+        await ensureVideoLoaded(vid);
+        try { vid.currentTime = 0; } catch(_) {}
+        try { await vid.play(); } catch(_) {}
+      });
+
+      card.addEventListener("mouseleave", () => {
+        try { vid.pause(); } catch(_) {}
+        try { vid.currentTime = 0; } catch(_) {}
+      });
+
+      card.addEventListener("click", () => {
+        const title = card.dataset.title || card.querySelector(".title b")?.textContent || "WallFlow";
+        const src = card.dataset.src || vid.dataset.src || "";
+        const file = card.dataset.file || "";
+        window.location.href = buildDetailsUrl({ title, src, file });
+      });
+    });
+
+    (function(){
+      var burger = document.getElementById("burgerBtn");
+      var overlay = document.getElementById("navOverlay");
+      var drawer = document.getElementById("navDrawer");
+      if (!burger || !overlay) return;
+      function openMenu(){ overlay.classList.add("is-open"); overlay.setAttribute("aria-hidden", "false"); burger.setAttribute("aria-expanded", "true"); }
+      function closeMenu(){ overlay.classList.remove("is-open"); overlay.setAttribute("aria-hidden", "true"); burger.setAttribute("aria-expanded", "false"); }
+      burger.addEventListener("click", function(){ overlay.classList.contains("is-open") ? closeMenu() : openMenu(); });
+      overlay.addEventListener("click", function(e){ if (e.target === overlay) closeMenu(); });
+      drawer.querySelectorAll(".chip").forEach(function(a){ a.addEventListener("click", closeMenu); });
+      document.addEventListener("keydown", function(e){ if (e.key === "Escape" && overlay.classList.contains("is-open")) closeMenu(); });
+    })();
+  </script>
+</body>
+</html>
