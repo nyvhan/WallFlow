@@ -62,10 +62,17 @@
     :root.light-mode .themeToggleFab #themeIconMoon{ display: block; }
     :root.light-mode .themeToggleFab #themeIconSun{ display: none; }
     :root.light-mode body{ background: radial-gradient(900px 500px at 20% -5%, rgba(10, 132, 255, .06), transparent 50%), radial-gradient(700px 400px at 85% 15%, rgba(255, 88, 200, .04), transparent 50%), linear-gradient(180deg, var(--bg), var(--bg2)); background-color: var(--bg); }
-    :root.light-mode .logo{ filter: invert(1) brightness(0.2); }
+    :root.light-mode .logo{ filter: invert(1); }
     :root.light-mode .nav{ backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     :root.light-mode .burgerBtn{ color: var(--text); }
-    :root.light-mode h1, :root.light-mode h2, :root.light-mode p, :root.light-mode .chip, :root.light-mode .brand b, :root.light-mode .brand span, :root.light-mode .footerLine, :root.light-mode .footerLine a{ color: var(--text); }
+    :root.light-mode h1, :root.light-mode h2, :root.light-mode .chip, :root.light-mode .brand b, :root.light-mode .brand span, :root.light-mode .footerLine, :root.light-mode .footerLine a{ color: var(--text); }
+    :root.light-mode .visionBlock p, :root.light-mode .profileCard, :root.light-mode .creatorName{ color: #2d3436; }
+    :root.light-mode .profileCard{ background: rgba(255,255,255,.85); border-color: rgba(45,52,54,.12); }
+    :root.light-mode .linksBlock{ border-top-color: rgba(45,52,54,.12); }
+    :root.light-mode .linkItem{ border-color: rgba(45,52,54,.2); color: #2d3436; }
+    :root.light-mode .linkItem:hover{ border-color: rgba(45,52,54,.3); background: rgba(45,52,54,.06); }
+    :root.light-mode .linkItem .linkIcon, :root.light-mode .linkItem svg{ filter: invert(1); }
+    :root.light-mode .linkItem .pseudo{ color: rgba(45,52,54,.6); }
 
     * { box-sizing: border-box; }
     html { min-height: 100%; overflow-x: hidden; scrollbar-color: rgba(255,255,255,.12) var(--bg); scrollbar-width: thin; }

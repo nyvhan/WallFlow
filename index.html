@@ -185,13 +185,14 @@
       background: radial-gradient(900px 500px at 20% -5%, rgba(10, 132, 255, .06), transparent 50%), radial-gradient(700px 400px at 85% 15%, rgba(255, 88, 200, .04), transparent 50%), linear-gradient(180deg, var(--bg), var(--bg2));
       background-color: var(--bg);
     }
-    :root.light-mode .logo{ filter: invert(1) brightness(0.2); }
+    :root.light-mode .logo{ filter: invert(1); }
     :root.light-mode .nav{ backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     :root.light-mode .burgerBtn{ color: var(--text); }
     :root.light-mode h1, :root.light-mode h2, :root.light-mode p, :root.light-mode .chip, :root.light-mode .brand b, :root.light-mode .brand span, :root.light-mode .footerLine, :root.light-mode .footerLine a{ color: var(--text); }
     :root.light-mode .heroCard{ box-shadow: 0 4px 28px rgba(45, 52, 54, .1); }
     :root.light-mode .heroGlass{ backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     :root.light-mode .card{ box-shadow: 0 2px 20px rgba(45, 52, 54, .06); }
+    :root.light-mode .card .info .title b, :root.light-mode .card .info .title small{ color: rgba(255,255,255,.95) !important; }
 
     .navOverlay{ position: fixed; inset: 0; z-index: 55; background: var(--overlay); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s ease; }
     .navOverlay.is-open{ opacity: 1; visibility: visible; }
