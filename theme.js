@@ -34,11 +34,10 @@
       root.classList.remove("light-mode");
     }
     setStored(light ? "light" : "dark");
-    var btn = document.getElementById("themeToggle");
-    if (btn) {
+    [].forEach.call(document.querySelectorAll("#themeToggle, #themeToggleMobile"), function(btn) {
       btn.setAttribute("aria-label", light ? "Passer en mode sombre" : "Passer en mode clair");
       btn.setAttribute("title", light ? "Mode sombre" : "Mode clair");
-    }
+    });
     var sun = document.getElementById("themeIconSun");
     var moon = document.getElementById("themeIconMoon");
     if (sun) sun.style.display = light ? "none" : "";
@@ -55,10 +54,12 @@
     apply(light);
   })();
 
-  // Attacher le clic au bouton
+  // Attacher le clic aux boutons (desktop + mobile drawer)
   function initButton() {
     var btn = document.getElementById("themeToggle");
+    var btnMobile = document.getElementById("themeToggleMobile");
     if (btn) btn.addEventListener("click", toggle);
+    if (btnMobile) btnMobile.addEventListener("click", toggle);
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initButton);

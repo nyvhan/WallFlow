@@ -43,27 +43,37 @@
       --overlay: rgba(0,0,0,.6);
     }
     :root.light-mode{
-      --bg: #f5f5f7;
-      --bg2: #e8e8ed;
-      --text: rgba(0,0,0,.92);
-      --muted: rgba(0,0,0,.55);
-      --card-bg: rgba(0,0,0,.04);
-      --card-border: rgba(0,0,0,.1);
-      --surface: rgba(0,0,0,.04);
-      --surface-hover: rgba(0,0,0,.07);
-      --border: rgba(0,0,0,.1);
-      --border-hover: rgba(0,0,0,.18);
-      --nav-bg: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.88));
-      --nav-border: rgba(0,0,0,.08);
-      --scrollbar: rgba(0,0,0,.2);
-      --scrollbar-hover: rgba(0,0,0,.35);
-      --overlay: rgba(0,0,0,.5);
-      --shadow: 0 30px 80px rgba(0,0,0,.12);
-      --shadow2: 0 18px 44px rgba(0,0,0,.1);
+      --bg: #f8f9fa;
+      --bg2: #eef0f2;
+      --text: #2d3436;
+      --muted: rgba(45, 52, 54, .65);
+      --card-bg: #ffffff;
+      --card-border: rgba(45, 52, 54, .08);
+      --surface: rgba(255,255,255,.9);
+      --surface-hover: rgba(255,255,255,.95);
+      --border: rgba(45, 52, 54, .12);
+      --border-hover: rgba(45, 52, 54, .18);
+      --nav-bg: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.75));
+      --nav-border: rgba(45, 52, 54, .06);
+      --scrollbar: rgba(45, 52, 54, .2);
+      --scrollbar-hover: rgba(45, 52, 54, .35);
+      --overlay: rgba(0,0,0,.45);
+      --shadow: 0 4px 24px rgba(45, 52, 54, .08);
+      --shadow2: 0 2px 16px rgba(45, 52, 54, .06);
     }
-    .themeToggle{ display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border: none; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); color: var(--text); cursor: pointer; transition: background .2s, border-color .2s; }
-    .themeToggle:hover{ background: var(--surface-hover); border-color: var(--border-hover); }
-    .themeToggle svg{ display: block; }
+    .themeToggleFab{ position: fixed; bottom: 20px; left: 20px; z-index: 60; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(0,0,0,.1); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); transition: transform .2s, box-shadow .2s, background .2s; }
+    .themeToggleFab:hover{ transform: scale(1.06); box-shadow: 0 6px 28px rgba(0,0,0,.18); background: var(--surface-hover); }
+    .themeToggleFab svg{ width: 22px; height: 22px; }
+    .themeToggleFab #themeIconMoon{ display: none; }
+    .themeToggleFab #themeIconSun{ display: block; }
+    :root.light-mode .themeToggleFab #themeIconMoon{ display: block; }
+    :root.light-mode .themeToggleFab #themeIconSun{ display: none; }
+    :root.light-mode body{ background: radial-gradient(900px 500px at 20% -5%, rgba(10, 132, 255, .06), transparent 50%), radial-gradient(700px 400px at 85% 15%, rgba(255, 88, 200, .04), transparent 50%), linear-gradient(180deg, var(--bg), var(--bg2)); background-color: var(--bg); }
+    :root.light-mode .logo{ filter: invert(1) brightness(0.2); }
+    :root.light-mode .nav{ backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    :root.light-mode .burgerBtn{ color: var(--text); }
+    :root.light-mode h1, :root.light-mode h2, :root.light-mode p, :root.light-mode .chip, :root.light-mode .brand b, :root.light-mode .brand span, :root.light-mode .footerLine, :root.light-mode .footerLine a{ color: var(--text); }
+    :root.light-mode .card{ box-shadow: 0 2px 20px rgba(45, 52, 54, .06); }
 
     *{ box-sizing:border-box; }
     html{ overflow-x: hidden; scrollbar-color: rgba(255,255,255,.12) var(--bg); scrollbar-width: thin; }
@@ -139,7 +149,7 @@
     .pill input{ appearance:none; border:none; outline:none; background:transparent; color: var(--text); width:100%; font-size: 13.5px; letter-spacing: -.01em; }
     .pill input::placeholder{ color: rgba(255,255,255,.45); }
 
-    .navRight{ display:flex; align-items:center; justify-content:flex-end; gap: 10px; min-width: 320px; }
+    .navRight{ display:flex; align-items:center; justify-content:flex-end; gap: 10px; min-width: 320px; overflow: visible; }
     .chip{ padding: 9px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 12.5px; font-weight: 560; transition: transform .25s ease, background .25s ease, border-color .25s ease; user-select:none; white-space:nowrap; opacity: .9; }
     .chip:hover{ transform: translateY(-1px); background: var(--surface-hover); border-color: var(--border-hover); }
 
@@ -441,10 +451,6 @@
         <a class="chip" href="../submit/" data-i18n="nav_submit">Soumettre</a>
         <a class="chip" href="../creator/" data-i18n="nav_about">À propos</a>
       </nav>
-      <button type="button" id="themeToggle" class="themeToggle" aria-label="Passer en mode clair" title="Mode clair">
-        <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        <svg id="themeIconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
       <button type="button" class="burgerBtn" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navDrawer"><span></span></button>
     </div>
   </header>
@@ -907,6 +913,10 @@
       <button type="button" id="langWarningOk" data-i18n="warning_ok">Compris</button>
     </div>
   </div>
+  <button type="button" id="themeToggle" class="themeToggleFab" aria-label="Changer le thème" title="Changer le thème">
+    <svg id="themeIconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg id="themeIconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
   <script src="../theme.js"></script>
   <script src="../lang.js"></script>
   <script>
