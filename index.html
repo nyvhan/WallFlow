@@ -191,9 +191,14 @@
     :root.light-mode h1, :root.light-mode h2, :root.light-mode p, :root.light-mode .chip, :root.light-mode .brand b, :root.light-mode .brand span, :root.light-mode .footerLine, :root.light-mode .footerLine a{ color: var(--text); }
     :root.light-mode .chip{ opacity: 1; }
     :root.light-mode .footerLine{ opacity: 1; }
+    :root.light-mode .heroGlass{ background: rgba(255,255,255,0.4) !important; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,.5); }
     :root.light-mode .heroGlass .kicker,
     :root.light-mode .heroGlass h1,
-    :root.light-mode .heroGlass .sub{ color: #ffffff !important; opacity: 1; }
+    :root.light-mode .heroGlass .sub{ color: #1a1a1a !important; opacity: 1; }
+    :root.light-mode .heroGlass .btn{ background: rgba(255,255,255,.95); border: 1px solid rgba(0,0,0,.2); color: #1a1a1a; }
+    :root.light-mode .heroGlass .btn:hover{ background: #fff; border-color: rgba(0,0,0,.3); }
+    :root.light-mode .heroGlass .btn.secondary{ background: rgba(0,0,0,.12); border: 1px solid rgba(0,0,0,.35); color: #1a1a1a; }
+    :root.light-mode .heroGlass .btn.secondary:hover{ background: rgba(0,0,0,.18); border-color: rgba(0,0,0,.45); }
     :root.light-mode .langPickerTrigger{ color: var(--text); }
     :root.light-mode .langPickerMenu{ background: rgba(255,255,255,.96); border-color: rgba(45,52,54,.15); box-shadow: 0 12px 40px rgba(45,52,54,.12); }
     :root.light-mode .langPickerItem{ color: #2d3436; }
@@ -202,7 +207,6 @@
     :root.light-mode .navDrawer{ background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,249,250,.96)); border-left-color: rgba(45,52,54,.12); }
     :root.light-mode .navDrawer .chip{ color: var(--text); }
     :root.light-mode .heroCard{ box-shadow: 0 4px 28px rgba(45, 52, 54, .1); }
-    :root.light-mode .heroGlass{ backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     :root.light-mode .card{ box-shadow: 0 2px 20px rgba(45, 52, 54, .06); }
     :root.light-mode .card .info .title b, :root.light-mode .card .info .title small{ color: rgba(255,255,255,.95) !important; }
 
