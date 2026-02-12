@@ -55,6 +55,8 @@
     :root.light-mode .nav{ backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     :root.light-mode .burgerBtn{ color: var(--text); }
     :root.light-mode h1, :root.light-mode p, :root.light-mode .chip, :root.light-mode .brand b, :root.light-mode .brand span, :root.light-mode .footerLine, :root.light-mode .footerLine a, :root.light-mode .errorMessage, :root.light-mode .btnHome{ color: var(--text); }
+    :root.light-mode .chip{ opacity: 1; }
+    :root.light-mode .footerLine{ opacity: 1; }
 
     *{ box-sizing:border-box; }
     html{ overflow-x: hidden; scrollbar-color: rgba(255,255,255,.12) var(--bg); scrollbar-width: thin; }
@@ -209,7 +211,7 @@
     .footerLine a:hover{ color: rgba(255,255,255,0.55); }
 
     @media (max-width: 980px){ .navRight{ display:none; } .burgerBtn{ display: inline-flex; } }
-    @media (max-width: 768px){ .brand span{ display: none; } .brand{ min-width: 0; } .errorCode{ font-size: clamp(64px, 16vw, 100px); } }
+    @media (max-width: 768px){ .brand span{ display: none; } .brand{ min-width: 0; } .errorCode{ font-size: clamp(64px, 16vw, 100px); } footer{ padding-bottom: 80px; } }
     @media (max-width: 640px){ .brand span{ display:none; } }
     @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition: none !important; } body::before{ display:none; } }
   </style>

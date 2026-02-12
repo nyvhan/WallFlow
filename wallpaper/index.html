@@ -61,6 +61,15 @@
     :root.light-mode .nav{ backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     :root.light-mode .burgerBtn{ color: var(--text); }
     :root.light-mode h1, :root.light-mode h2, :root.light-mode p, :root.light-mode .chip, :root.light-mode .brand b, :root.light-mode .brand span, :root.light-mode .footerLine, :root.light-mode .footerLine a, :root.light-mode .panel p{ color: var(--text); }
+    :root.light-mode .chip{ opacity: 1; }
+    :root.light-mode .footerLine{ opacity: 1; }
+    :root.light-mode .langPickerTrigger{ color: var(--text); }
+    :root.light-mode .langPickerMenu{ background: rgba(255,255,255,.96); border-color: rgba(45,52,54,.15); box-shadow: 0 12px 40px rgba(45,52,54,.12); }
+    :root.light-mode .langPickerItem{ color: #2d3436; }
+    :root.light-mode .langPickerItem:hover{ background: rgba(45,52,54,.08); }
+    :root.light-mode .langPickerItem.is-active{ background: rgba(45,52,54,.12); color: #2d3436; }
+    :root.light-mode .navDrawer{ background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,249,250,.96)); border-left-color: rgba(45,52,54,.12); }
+    :root.light-mode .navDrawer .chip{ color: var(--text); }
 
     *{ box-sizing:border-box; }
     html{ overflow-x: hidden; scrollbar-color: rgba(255,255,255,.12) var(--bg); scrollbar-width: thin; }
@@ -219,7 +228,7 @@
       .navRight{ display:none; }
       .burgerBtn{ display: inline-flex; }
     }
-    @media (max-width: 768px){ .brand span{ display: none; } .brand{ min-width: 0; } }
+    @media (max-width: 768px){ .brand span{ display: none; } .brand{ min-width: 0; } footer{ padding-bottom: 80px; } }
     @media (max-width: 640px){
       .brand span{ display:none; }
     }
