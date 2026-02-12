@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
+  <script>(function(){try{var t=localStorage.getItem("wallflow-theme");if(t==="light")document.documentElement.classList.add("light-mode");}catch(e){}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WallFlow — Page introuvable</title>
   <meta name="color-scheme" content="dark light" />
@@ -23,7 +24,28 @@
       --muted: rgba(255,255,255,.62);
       --max: 1200px;
       --sf: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --surface: rgba(255,255,255,.04);
+      --surface-hover: rgba(255,255,255,.07);
+      --border: rgba(255,255,255,.1);
+      --border-hover: rgba(255,255,255,.14);
+      --nav-bg: linear-gradient(180deg, rgba(12,14,20,.66), rgba(12,14,20,.28));
+      --nav-border: rgba(255,255,255,.06);
     }
+    :root.light-mode{
+      --bg: #f5f5f7;
+      --bg2: #e8e8ed;
+      --text: rgba(0,0,0,.92);
+      --muted: rgba(0,0,0,.55);
+      --surface: rgba(0,0,0,.04);
+      --surface-hover: rgba(0,0,0,.07);
+      --border: rgba(0,0,0,.1);
+      --border-hover: rgba(0,0,0,.18);
+      --nav-bg: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.88));
+      --nav-border: rgba(0,0,0,.08);
+    }
+    .themeToggle{ display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border: none; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); color: var(--text); cursor: pointer; transition: background .2s, border-color .2s; }
+    .themeToggle:hover{ background: var(--surface-hover); border-color: var(--border-hover); }
+    .themeToggle svg{ display: block; }
 
     *{ box-sizing:border-box; }
     html{ overflow-x: hidden; scrollbar-color: rgba(255,255,255,.12) var(--bg); scrollbar-width: thin; }
@@ -105,8 +127,8 @@
     .brand span{ color:var(--muted); font-weight: 520; font-size: 12.5px; }
 
     .navRight{ display:flex; align-items:center; justify-content:flex-end; gap: 10px; min-width: 320px; }
-    .chip{ padding: 9px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); color: rgba(255,255,255,.78); font-size: 12.5px; font-weight: 560; transition: transform .25s ease, background .25s ease, border-color .25s ease; user-select:none; white-space:nowrap; }
-    .chip:hover{ transform: translateY(-1px); background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.14); }
+    .chip{ padding: 9px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 12.5px; font-weight: 560; transition: transform .25s ease, background .25s ease, border-color .25s ease; user-select:none; white-space:nowrap; opacity: .9; }
+    .chip:hover{ transform: translateY(-1px); background: var(--surface-hover); border-color: var(--border-hover); }
 
     .burgerBtn{ display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: none; border-radius: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.9); cursor: pointer; flex-shrink: 0; }
     .burgerBtn:hover{ background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.18); }
@@ -201,6 +223,10 @@
         <a class="chip" href="../submit/">Soumettre</a>
         <a class="chip" href="../creator/">À propos</a>
       </nav>
+      <button type="button" id="themeToggle" class="themeToggle" aria-label="Passer en mode clair" title="Mode clair">
+        <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg id="themeIconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
       <button type="button" class="burgerBtn" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navDrawer"><span></span></button>
     </div>
   </header>
@@ -239,5 +265,6 @@
       document.addEventListener("keydown", function(e){ if(e.key === "Escape" && overlay.classList.contains("is-open")) closeNav(); });
     })();
   </script>
+  <script src="../theme.js"></script>
 </body>
 </html>
