@@ -160,10 +160,15 @@
     .brand span{ color:var(--muted); font-weight: 520; font-size: 12.5px; }
 
     .navCenter{ display:flex; align-items:center; gap: 10px; flex: 1; justify-content: center; }
-    .pill{ display:flex; align-items:center; gap: 10px; padding: 10px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.06); box-shadow: 0 16px 40px rgba(0,0,0,.22); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); max-width: 560px; width: 100%; }
-    .pill svg{ opacity:.8; }
-    .pill input{ appearance:none; border:none; outline:none; background:transparent; color: var(--text); width:100%; font-size: 13.5px; letter-spacing: -.01em; }
+    .pill{ display:flex; align-items:center; gap: 10px; padding: 10px 12px; padding-right: 36px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.06); box-shadow: 0 16px 40px rgba(0,0,0,.22); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); max-width: 560px; width: 100%; position: relative; }
+    .pill svg{ opacity:.8; flex-shrink: 0; }
+    .pill input{ appearance:none; border:none; outline:none; background:transparent; color: var(--text); width:100%; min-width: 0; font-size: 13.5px; letter-spacing: -.01em; }
     .pill input::placeholder{ color: rgba(255,255,255,.45); }
+    .searchClear{ position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; padding: 0; border: none; border-radius: 50%; background: rgba(255,255,255,.12); color: rgba(255,255,255,.7); font-size: 16px; line-height: 1; cursor: pointer; display: none; align-items: center; justify-content: center; transition: background .2s, color .2s, opacity .2s; }
+    .searchClear:hover{ background: rgba(255,255,255,.2); color: rgba(255,255,255,.95); }
+    .pill.has-input .searchClear{ display: flex; }
+    :root.light-mode .searchClear{ background: rgba(45,52,54,.12); color: rgba(45,52,54,.6); }
+    :root.light-mode .searchClear:hover{ background: rgba(45,52,54,.2); color: #2d3436; }
 
     .navRight{ display:flex; align-items:center; justify-content:flex-end; gap: 10px; min-width: 320px; overflow: visible; }
     .chip{ padding: 9px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 12.5px; font-weight: 560; transition: transform .25s ease, background .25s ease, border-color .25s ease; user-select:none; white-space:nowrap; opacity: .9; }
@@ -198,6 +203,16 @@
     .sectionHead{ display:flex; align-items:flex-end; justify-content:space-between; gap: 18px; margin: 18px 0 16px; }
     .sectionHead h2{ margin:0; font-size: 18px; font-weight: 720; letter-spacing: -.02em; }
     .sectionHead p{ margin:0; color: rgba(255,255,255,.60); font-size: 13px; line-height: 1.5; max-width: 66ch; }
+
+    .searchEmpty{ padding: clamp(48px, 8vw, 80px) 24px; text-align: center; border-radius: var(--radius2); background: rgba(255,255,255,.06); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,.1); box-shadow: var(--shadow2); margin-top: 8px; display: none; }
+    .searchEmpty.is-visible{ display: block; }
+    .searchEmptyTitle{ margin: 0 0 20px; font-size: clamp(16px, 2vw, 18px); color: var(--text); line-height: 1.5; max-width: 42ch; margin-inline: auto; }
+    .searchEmptyBtn{ padding: 12px 24px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.1); color: var(--text); font-size: 14px; font-weight: 620; cursor: pointer; transition: transform .2s, background .2s, border-color .2s; }
+    .searchEmptyBtn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.3); }
+    :root.light-mode .searchEmpty{ background: rgba(255,255,255,.4); border-color: rgba(45,52,54,.15); }
+    :root.light-mode .searchEmptyTitle{ color: #2d3436; }
+    :root.light-mode .searchEmptyBtn{ background: rgba(45,52,54,.1); border-color: rgba(45,52,54,.25); color: #2d3436; }
+    :root.light-mode .searchEmptyBtn:hover{ background: rgba(45,52,54,.16); border-color: rgba(45,52,54,.35); }
 
     .grid{ display:grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; padding-top: 8px; }
     .card{ grid-column: span 4; border-radius: var(--radius2); overflow:hidden; position:relative; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); box-shadow: 0 20px 60px rgba(0,0,0,.28); transform: translateZ(0); isolation:isolate; }
@@ -440,12 +455,13 @@
       </a>
 
       <div class="navCenter">
-        <div class="pill" role="search">
+        <div class="pill" role="search" id="pillWrap">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="rgba(255,255,255,.75)" stroke-width="1.7"/>
             <path d="M16.2 16.2 21 21" stroke="rgba(255,255,255,.75)" stroke-width="1.7" stroke-linecap="round"/>
           </svg>
           <input id="search" data-i18n-ph="collection_search_placeholder" placeholder="Rechercher (ex: jeux, manga, espace, chill…)" />
+          <button type="button" class="searchClear" id="searchClear" aria-label="Effacer la recherche" title="Effacer">&times;</button>
         </div>
       </div>
 
@@ -504,6 +520,10 @@
         </div>
       </div>
 
+      <div class="searchEmpty" id="searchEmpty" role="status" aria-live="polite" hidden>
+        <p class="searchEmptyTitle" data-i18n="collection_search_empty">Oups ! Aucun fond d'écran ne correspond à votre recherche…</p>
+        <button type="button" class="searchEmptyBtn" id="searchEmptyBtn" data-i18n="collection_search_show_all">Voir tout</button>
+      </div>
       <div class="grid" id="grid"></div>
 
       <footer>
@@ -754,16 +774,56 @@
         .filter(Boolean);
     }
 
+    const pillWrap = document.getElementById("pillWrap");
+    const searchClear = document.getElementById("searchClear");
+    const searchEmpty = document.getElementById("searchEmpty");
+    const searchEmptyBtn = document.getElementById("searchEmptyBtn");
+    const gridEl = document.getElementById("grid");
+
+    function updateClearVisibility(){
+      if (pillWrap) pillWrap.classList.toggle("has-input", search.value.trim().length > 0);
+    }
+
     function applySearch(){
       const tokens = tokenize(search.value);
+      let visibleCount = 0;
       cards.forEach(card => {
-        if (!tokens.length){ card.style.display = ""; return; }
+        if (!tokens.length){ card.style.display = ""; visibleCount++; return; }
         const hay = (card.getAttribute("data-tags") || "").toLowerCase();
         const ok = tokens.every(t => hay.includes(t));
         card.style.display = ok ? "" : "none";
+        if (ok) visibleCount++;
+      });
+      updateClearVisibility();
+      if (searchEmpty && gridEl){
+        const showEmpty = tokens.length > 0 && visibleCount === 0;
+        searchEmpty.classList.toggle("is-visible", showEmpty);
+        searchEmpty.hidden = !showEmpty;
+        gridEl.style.display = showEmpty ? "none" : "";
+      }
+    }
+
+    search.addEventListener("input", applySearch);
+    search.addEventListener("focus", updateClearVisibility);
+    search.addEventListener("blur", updateClearVisibility);
+
+    if (searchClear){
+      searchClear.addEventListener("click", function(){
+        search.value = "";
+        applySearch();
+        search.focus();
       });
     }
-    search.addEventListener("input", applySearch);
+
+    if (searchEmptyBtn){
+      searchEmptyBtn.addEventListener("click", function(){
+        search.value = "";
+        applySearch();
+        search.focus();
+      });
+    }
+
+    updateClearVisibility();
 
     // ——— Lecteur plein écran (modal) ———
     const playerModal = document.getElementById("playerModal");
